@@ -1,0 +1,60 @@
+kafka_eco_system: v1.4
+spec:
+  ports:
+    rest_server_grpc_client:
+      bind_addr: ""
+    grpc_server:
+      bind_addr: ""
+  db:
+    name: ""
+    host: ""
+    port: ""
+    user: ""
+    password: ""
+    database: ""
+    max_conn_lifetime: ""
+    max_conn_idletime: ""
+    max_conns: ""
+    min_conns: ""
+    health_check_period: ""
+  jwt:
+    token: ""
+    term: 90
+  kafka_conf:
+    brokers:
+      broker1: ""
+    topics:
+      topic1: "analyticsData"
+    keys:
+      key1: ""
+    kafkaClientId:
+      kafka_client_id: ""
+  dialer:
+    timeout: 10
+  producer:
+    async: true
+    max_attempts: 10
+    batch_size: 5
+    batch_bytes: 1048576
+    batcht_timeout: 5
+    write_timeout: 10
+    read_timeout: 10
+    required_acks: 1
+  consumer:
+    heart_beat_interval: 3
+	  queue_capacity: 100
+		min_bytes: 2000
+		max_bytes: 1048576
+		max_wait: 30
+		watch_partition_changes: true
+		partition_watch_interval: 5
+		session_timeout: 30
+		rebalance_timeout: 30
+		retention_time: 40
+		read_backoff_min: 100
+		read_backoff_max: 1
+  handle:
+    batch_size: 20
+    batch_bytes: 5000    
+  logs:
+    path: "/root/kafka_client/logs.txt"

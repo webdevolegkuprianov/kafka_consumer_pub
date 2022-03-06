@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package = "github.com/webdevolegkuprianov/server_rest_grpc/proto;protobuf";
+
+//services
+service Stream {
+    rpc Stream1(stream Request1) returns (Response) {}
+    rpc Stream2(stream Request2) returns (Response) {}
+    rpc Stream3(stream Request3) returns (Response) {}
+}
+
+//messages structs
+message Request1 {
+    bytes message = 1;
+}
+
+message Request2 {
+    bytes message = 1;
+}
+
+message Request3 {
+    bytes message = 1;
+}
+
+message Response {
+    string message1 = 1;
+}
+
+//deserialize structs
+message StructRequest1 {
+    string modification = 1;
+    string mod_family = 2;
+    string mod_body_type = 3;
+    string mod_engine = 4;
+    string mod_base = 5;
+    string url_mod = 6;
+    string clientid_google = 7;
+    string ClientID = 8;
+}
+
+
+
